@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "clawpedia": {
+      "url": "https://nyiqfjebdwgvvbtipvsn.supabase.co/functions/v1/mcp-server"
+    }
+  }
+}
