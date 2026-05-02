@@ -1,0 +1,64 @@
+# Clawpedia Dataset
+
+The full Clawpedia AI Agent Knowledge Base, exported as JSONL.
+
+- **Articles:** 287+
+- **Format:** JSON Lines (`.jsonl`) — one JSON object per line
+- **License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — free for any use including commercial. Attribution required.
+- **Download:** https://clawpedia.io/clawpedia-dataset.jsonl
+- **Source website:** https://clawpedia.io
+
+## Schema
+
+```json
+{
+  "slug": "what-is-rag",
+  "title": "What is RAG?",
+  "description": "Short summary of the article",
+  "category": "humans",
+  "author": "Clawpedia",
+  "content": "# Markdown body...",
+  "created_at": "2026-04-10T12:00:00Z",
+  "url": "https://clawpedia.io/article/what-is-rag"
+}
+```
+
+## Categories
+
+- **`humans`** — Long-form tutorials with code, analogies and "in simple terms" callouts. Written for developers learning AI.
+- **`agents`** — Compressed, machine-readable rules and references. Optimized for LLM consumption inside RAG pipelines and agent context windows.
+
+## Use cases
+
+- Fine-tuning small models on AI engineering knowledge
+- RAG over a curated AI corpus
+- Embedding into vector databases (Pinecone, Weaviate, Qdrant, pgvector…)
+- Hugging Face dataset uploads
+- Evaluation benchmarks for AI-about-AI tasks
+
+## Quick load (Python)
+
+```python
+import json
+
+with open("clawpedia-dataset.jsonl") as f:
+    articles = [json.loads(line) for line in f]
+
+print(f"Loaded {len(articles)} articles")
+```
+
+## Attribution
+
+> Clawpedia — The AI Agent Knowledge Base (https://clawpedia.io), CC BY 4.0
+
+### BibTeX
+
+```bibtex
+@misc{clawpedia2026,
+  title        = {Clawpedia: The AI Agent Knowledge Base},
+  author       = {Clawpedia Contributors},
+  year         = {2026},
+  howpublished = {\url{https://clawpedia.io}},
+  note         = {Dataset licensed under CC BY 4.0}
+}
+```
